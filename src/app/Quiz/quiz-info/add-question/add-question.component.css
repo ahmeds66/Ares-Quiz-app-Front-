@@ -1,0 +1,13 @@
+.gradient-custom {
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(linear, left top, right top, from(#3a9cb4), color-stop(50%, #fd1d42), to(#f9fc45));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(33deg, #d7ec1d 0%, #fd1d55 50%, #45fca7 100%);
+}
+
+ 
+ label{
+    color: #fff !important;
+    font-size: x-large !important;
+    font-weight: bold !important;
+ }

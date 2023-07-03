@@ -1,0 +1,114 @@
+
+<div class="gradient-custom vh-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="card bg-black text-white" style="border-radius: 1rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Add Question</h1>
+                </div>
+                <!--Body-->
+                <!--Form to add a Question-->
+                <div class="card-body text-center">
+                    <form>
+                        <!--Question-->
+                        <label for="question" class="form-label">Question</label>
+                        <input type="text" class="form-control" id="question" placeholder="Enter Question" [(ngModel)]="newquestion.question" name="question" required>
+         <br>
+
+                        <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                        <!--Answer 1-->
+                        <div class="card bg-warning text-white" style="width: 18rem; height: 8rem;">
+                            <div class="card-body">
+                                <label for="answer1" class="form-label">Answer 1</label>
+                                <input type="text" class="form-control" id="answer1" placeholder="Enter Answer 1" [(ngModel)]="newquestion.answer1" name="answer1" required>
+                            </div>
+                        </div>
+                        </div>
+                        <!--Answer 2-->
+                        <div class="col-sm-6">
+                        <div class="card bg-warning text-white" style="width: 18rem; height: 8rem;">
+                            <div class="card-body">
+                                <label for="answer2" class="form-label">Answer 2</label>
+                                <input type="text" class="form-control" id="answer2" placeholder="Enter Answer 2" [(ngModel)]="newquestion.answer2" name="answer2" required>
+                            </div>
+                        </div>
+                        </div>
+                        <!--Answer 3-->
+                        <div class="col-sm-6">
+                        <div class="card bg-warning text-white" style="width: 18rem; height: 8rem;">
+                            <div class="card-body">
+                                <label for="answer3" class="form-label">Answer 3</label>
+                                <input type="text" class="form-control" id="answer3" placeholder="Enter Answer 3" [(ngModel)]="newquestion.answer3" name="answer3" required>
+                            </div>
+                        </div>
+                        </div>
+                        <!--Answer 4-->
+                        <div class="col-sm-6">
+                        <div class="card bg-warning text-white" style="width: 18rem; height: 8rem;">
+                            <div class="card-body">
+                                <label for="answer4" class="form-label">Answer 4</label>
+                                <input type="text" class="form-control" id="answer4" placeholder="Enter Answer 4" [(ngModel)]="newquestion.answer4" name="answer4">
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                         <br>
+                         <!--Correct Answers-->
+                         <!--Multiple Choises checkbox-->
+                        <div class="form-check form-switch">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Multiple Choises
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" (change)="checked()">
+                            </label>
+                        </div>
+                        <!--Correct Answer 1-->
+                        <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card bg-success text-white" style="width: 18rem; height: 8rem;">
+                            <div>
+                                <div class="card-body">
+                                    <label for="correctAnswer" class="form-label">Correct Answer</label>
+                                    <select class="form-select" id="correct_answer" [(ngModel)]="newquestion.correct_answer1" name="correctAnswer" required>
+                                        <option selected>Select Correct Answer</option>
+                                        <option [value]="newquestion.answer1">{{newquestion.answer1}}</option>
+                                        <option [value]="newquestion.answer2">{{newquestion.answer2}}</option>
+                                        <option [value]="newquestion.answer3">{{newquestion.answer3}}</option>
+                                        <option [value]="newquestion.answer4">{{newquestion.answer4}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <br>
+                        <!--Correct Answer 2 hidden-->
+                        <div class="col-sm-6">
+                        <div class="card bg-success text-white" style="width: 18rem; height: 8rem;" [hidden]="multipleChoices">
+                            <div>
+                                <div class="card-body">
+                                    <label for="correctAnswer2" class="form-label">Correct Answer 2</label>
+                                    <select class="form-select" id="correct_answer2" [(ngModel)]="newquestion.correct_answer2" name="correctAnswer2">
+                                        <option selected>Select Correct Answer 2</option>
+                                        <option [value]="newquestion.answer1">{{newquestion.answer1}}</option>
+                                        <option [value]="newquestion.answer2">{{newquestion.answer2}}</option>
+                                        <option [value]="newquestion.answer3">{{newquestion.answer3}}</option>
+                                        <option [value]="newquestion.answer4">{{newquestion.answer4}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                        <br />
+                        <div class="d-grid gap 3 d-md-flex justify-content-md-end">
+                            <button type="submit" (click)="CheckForm()" [hidden]="!valid" class="btn btn-success me-md-2">Check</button>
+                            <button type="submit" (click)="addQuestion()"  [hidden]="valid" class="btn btn-success me-md-2">Add</button>
+                            <!--The cancel button redirect to the previous page-->
+                            <a href="javascript:history.back()" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+
+<div class=" gradient-custom v-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="card bg-black text-white" style="border-radius: 1rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Themes Control</h1>
+                    <br>
+                    <a routerLink="/add-theme" class="btn btn-light justify-content-md-end d-md" role="button"
+                        data-bs-toggle="button" style="font-size: 1.2rem; font-weight: bold;"><img
+                            src="assets/icons/add.png" style="width: 2rem;" /> Add Theme</a>
+                    <br>
+                </div>
+                <!--Body-->
+                <div class="row row-cols-1 row-cols-md-4 g-3 justify-content-center">
+                    <!--Listing themes-->
+                    <div *ngFor="let theme of themes">
+                        <div class="col">
+                            <div class="card text-bg-light mb-3" style="width: 18rem; height: 35rem;">
+                                <img src="assets/Images/1911.i518.007..space frame [Converted].jpg"
+                                    class="card-img-top object-fit-cover border rounded" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{theme.name}}</h5>
+                                    <p class="card-text">{{theme.description}}</p>
+                                </div>
+                                <!--Footer-->
+                                <div class="card-footer text-muted">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-success me-md-2" (click)="updateTheme(theme)"
+                                            type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                            data-bs-id="id_theme?">
+                                            <img src="assets/icons/modify.png" style="width: 1.5rem;" />
+                                            Modify</button>
+                                        <a class="btn btn-danger" (click)="deleteTheme(theme)" role="button"
+                                            data-bs-toggle="button" style="font-size: 1.2rem; font-weight: bold;"><img
+                                                src="assets/icons/delete.png" style="width: 1.5rem;" /> Delete</a>
+                                    </div>
+
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <!--Header-->
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modify a
+                                                    Theme</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <!--Body-->
+                                            <div class="modal-body">
+                                                <form *ngIf="modalTheme">
+                                                    <div class="mb-3">
+                                                        <label for="themeId" class="form-label">
+                                                            <h3>Theme id</h3>
+                                                        </label>
+                                                        <input readonly type="text" [(ngModel)]="modalTheme.id_theme"
+                                                            name="id_theme" class="form-control" placeholder="Theme id">
+                                                    </div>
+                                                    <br />
+                                                    <div class="mb-3">
+                                                        <label for="themeName" class="form-label">
+                                                            <h3>Theme name</h3>
+                                                        </label>
+                                                        <input type="text" [(ngModel)]="modalTheme.name" name="name"
+                                                            class="form-control" placeholder="Theme name">
+                                                    </div>
+                                                    <br />
+                                                    <div class="mb-3">
+                                                        <label for="themeDescription" class="form-label">
+                                                            <h3>Description</h3>
+                                                        </label>
+                                                        <textarea [(ngModel)]="modalTheme.description"
+                                                            name="description" class="form-control"
+                                                            placeholder="Theme description">
+                                                            </textarea>
+                                                        <br />
+                                                    </div>
+                                                    
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            (click)="updateTheme(theme)">Save changes</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

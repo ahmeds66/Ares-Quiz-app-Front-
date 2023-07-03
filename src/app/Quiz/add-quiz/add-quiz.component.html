@@ -1,0 +1,51 @@
+<!-- Add Quiz Component -->
+<div class="gradient-custom vh-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="card bg-black text-white" style="border-radius: 1rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Add Quiz</h1>
+                </div>
+                <!--Body-->
+                <!--Form to add a Quiz-->
+                <div class="card-body">
+                    <form>
+                        <!--Name-->
+                        <div class="mb-3">
+                            <label for="QuizName" class="form-label">
+                                <h3>Quiz name</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newQuiz.name" name="name" class="form-control"
+                                placeholder="Quiz Name">
+                        </div>
+                        <br>
+                        <!--Theme-->
+                        <div class="col-sm-4 col-md-4 col-lg-4"> <h3>Theme Name</h3> <select
+                                class="form-control form-control-lg" id="id_theme" name="id_theme"
+                                [(ngModel)]="newid_theme">
+                                <option *ngFor="let theme of themes" [value]="theme.id_theme"> {{theme.name}} </option>
+                            </select>
+                        </div>
+                        <br>
+                        <!--Description-->
+                        <div class="mb-3">
+                            <label for="QuizDescription" class="form-label">
+                                <h3>Quiz Description</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newQuiz.description" name="description" class="form-control"
+                                placeholder="Quiz description">
+                        </div>
+                        <br />
+                        <div class="d-grid gap 3 d-md-flex justify-content-md-end">
+                            <!--Button to check form-->
+                            <button type="button" (click)="checkform()"  [hidden]="!valid"  class="btn btn-primary me-md-2">Check</button>
+                            <button type="submit" (click)="addQuiz()" [hidden]="valid" class="btn btn-success me-md-2">Add</button>
+                            <button type="reset" routerLink="/dashbord" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

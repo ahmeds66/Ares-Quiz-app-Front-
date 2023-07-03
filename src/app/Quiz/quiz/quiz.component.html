@@ -1,0 +1,41 @@
+
+<div class="vh-100 gradient-custom" style="vertical-align: center;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="card bg-black text-white" style="border-radius: 1rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Quizess
+                        <a routerLink="/add-quiz" class="btn btn-light " role="button" data-bs-toggle="button"
+                            style="font-size: 1.2rem; font-weight: bold; border-radius: 50px;"><img
+                                src="assets/icons/add.png" style="width: 2rem;" /></a>
+                    </h1>
+                    <br>
+                </div>
+                <!--Body-->
+                <div class="row">
+                    <div class="row row-cols-1 row-cols-md-4 g-3">
+                        <div *ngFor="let quiz of quizes">
+                            <div class="col">
+                                <div class="card text-bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{quiz.name}}</h5>
+                                        <p class="card-text">{{quiz.description}}</p>
+                                        <hr>
+                                        <h6>Number of Questions: {{quiz.nb_questions}}</h6>
+                                        <h6>Theme: {{quiz.theme_name}}</h6>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a class="btn btn-light" [routerLink]="['/quiz-info',quiz.id_quiz]"><img src="assets/icons/Edit.png" style="width: 20px;"></a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                </div>
+            </div>
+        </div>
+    </div>

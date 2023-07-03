@@ -1,0 +1,119 @@
+<div class=" gradient-custom vh-100">
+    <br>
+    <div class="container py-5">
+        <div class="card bg-light border-radius " style="border-radius: 15px;">
+            <div class="card-header text-center " style="color:black;">
+                <h1 class="mb-1">Users</h1>
+
+                <ul class="nav nav-tabs-primary" id="myTab" role="tablist">
+                    <li class="nav-item " role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                            aria-selected="true">Users</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                            aria-selected="false">Users Infos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                            data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane"
+                            aria-selected="false">Actions</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                        tabindex="0">
+                        <h3 class="text-center">Users
+                            <button class="btn btn-light" style="border-radius: 50px;"><img src="assets/icons/add.png"
+                                    style="width: 2rem" routerLink="/add-user"></button>
+                        </h3>
+                        <br>
+                        <div class="card bg-black">
+                            <table class="table table-black " style=" color: aliceblue;  border-radius: 15;">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Role</th>
+                                        <th scope="col" colspan="2" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of users">
+                                        <td>{{user.username}}</td>
+                                        <td>{{user.firstname}} {{user.lastname}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>{{user.role}}</td>
+                                        <td>
+                                            <button class="btn btn-primary" style="border-radius: 50px;"><img
+                                                    src="assets/icons/Edit.png" style="width: 20px;"></button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger" style="border-radius: 50px;"><img
+                                                    src="assets/icons/delete.png" style="width: 20px;"></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                            tabindex="0">
+                            <h3 class="text-center">Users
+                                <button class="btn btn-light" style="border-radius: 50px;"><img src="assets/icons/add.png"
+                                        style="width: 2rem" routerLink="/add-user"></button>
+                            </h3>
+                            <br>
+                            <div class="card bg-black">
+                                <table class="table table-black " style=" color: aliceblue;  border-radius: 15;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">CIN</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Date of Birth</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col" colspan="2" class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let user of users">
+                                            <td>{{user.cin}}</td>
+                                            <td>{{user.username}}</td>
+                                            <td>{{user.firstname}} {{user.firstname}}</td>
+                                            <td>{{user.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+                                            <td>{{user.email}}</td>
+                                            <td>{{user.address}}</td>
+                                            <td>{{user.phone}}</td>
+                                            <td style="text-transform: uppercase ;" >{{user.role}}</td>
+                                            <td>{{user.password}}</td>
+                                            <td>
+                                                <button class="btn btn-primary" style="border-radius: 50px;"><img
+                                                        src="assets/icons/Edit.png" style="width: 20px;"></button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-danger" style="border-radius: 50px;"><img
+                                                        src="assets/icons/delete.png" style="width: 20px;"></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                            tabindex="0">...</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

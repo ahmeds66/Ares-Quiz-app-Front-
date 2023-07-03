@@ -1,0 +1,39 @@
+
+<div class="gradient-custom vh-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="card bg-black text-white" style="border-radius: 1rem; height: 30rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Add Theme</h1>
+                </div>
+                <!--Body-->
+                <!--Form to add a theme-->
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="themeName" class="form-label">
+                                <h3>Theme name</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newTheme.name" name="name" class="form-control"
+                                placeholder="Theme name" required>
+                        </div>
+                        <br />
+                        <div class="mb-3">
+                            <label for="themeDescription" class="form-label">
+                                <h3>Description</h3>
+                            </label>
+                            <textarea [(ngModel)]="newTheme.description" name="description" class="form-control"
+                                placeholder="Description" required></textarea>
+                        </div>
+                        <br>
+                        <div class="d-grid gap 3 d-md-flex justify-content-md-end">
+                            <button type="submit" (click)="addTheme()" class="btn btn-success me-md-2">Add</button>
+                            <button type="reset" routerLink="/themes" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

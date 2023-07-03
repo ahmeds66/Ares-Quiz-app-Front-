@@ -1,0 +1,130 @@
+<!-- Add Quiz Component -->
+<div class="gradient-custom v-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="card bg-black text-white" style="border-radius: 1rem;">
+                <!--Header-->
+                <div class="card-header text-center">
+                    <h1 class="mb-1">Add User</h1>
+                </div>
+                <!--Body-->
+                <!--Form to add a Quiz-->
+                <div class="card-body">
+                    <form>
+                        <!--CIN-->
+                        <div class="mb-3">
+                            <label for="cin" class="form-label">
+                                <h3>cin</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.cin" name="cin" class="form-control"
+                                placeholder="User ID/cin">
+                        </div>
+                        <br>
+                        <!--Username-->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                <h3>Username</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.username" name="username" class="form-control"
+                                placeholder="Username">
+                        </div>
+                        <br>
+                        <!--Password-->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                <h3>Password</h3>
+                            </label>
+                            <input type="password" [(ngModel)]="newUser.password" name="password" class="form-control"
+                                placeholder="Password">
+                        </div>
+                        <br>
+                        <!--First Name-->
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">
+                                <h3>First Name</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.firstname" name="firstName" class="form-control"
+                                placeholder="First Name">
+                        </div>
+                        <br>
+                        <!--Last Name-->
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">
+                                <h3>Last Name</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.lastname" name="lastName" class="form-control"
+                                placeholder="Last Name">
+                        </div>
+                        <br>
+                        <!--Date Of Birth-->
+                        <div class="mb-3">
+                            <label for="dateOfBirth" class="form-label">
+                                <h3>Date Of Birth</h3>
+                            </label>
+                            <input type="date" [(ngModel)]="newUser.dateOfBirth" name="dateOfBirth" class="form-control"
+                                placeholder="Date Of Birth">
+                        </div>
+                        <br>
+                        <!--Email-->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                <h3>Email</h3>
+                            </label>
+                            <input type="email" [(ngModel)]="newUser.email" name="email" class="form-control"
+                                placeholder="Email">
+                        </div>
+                        <br>
+                        <!--Address-->
+                        <div class="mb-3">
+                            <label for="address" class="form-label">
+                                <h3>Address</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.address" name="address" class="form-control"
+                                placeholder="Address">
+                        </div>
+                        <br>
+                        <!--Phone Number-->
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">
+                                <h3>Phone Number</h3>
+                            </label>
+                            <input type="text" [(ngModel)]="newUser.phone" name="phoneNumber" class="form-control"
+                                placeholder="Phone Number">
+                        </div>
+                        <br>
+                        <!--Role is selected either an admin or teacher-->
+                        <div class="mb-3">
+                            <label for="role" class="form-label">
+                                <h3>Role</h3>
+                            </label>
+                            <select [(ngModel)]="newUser.role" name="role" class="form-select">
+                                <option value="admin">Admin</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <div class="d-grid gap 3 d-md-flex justify-content-md-end">
+                            <!--Button to check form-->
+                            <button type="button" (click)="checkform()"  [hidden]="valid"  class="btn btn-primary me-md-2">Check</button>
+                            <button type="submit" (click)="addUser()" [hidden]="!valid" class="btn btn-success me-md-2">Add</button>
+                            <button type="reset" routerLink="/dashbord" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" [hidden]="valid"  id="liveToastBtn">
+          <div class="toast-header">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            missing fields, Please check your form !
+          </div>
+        </div>
+      </div>
+</div>
+
